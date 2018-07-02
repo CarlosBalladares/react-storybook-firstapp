@@ -7,6 +7,9 @@ import { linkTo } from '@storybook/addon-links';
 import { Button, Welcome } from '@storybook/react/demo';
 import App from '../App.js';
 
+import Card from '../card';
+
+
 
 storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 
@@ -20,4 +23,5 @@ storiesOf('Button', module)
     </Button>
   ))
   .add('test', ()=>(<h3>Hello World</h3>))
-  .add('app', ()=><App/>);
+  .add('app', ()=><App/>)
+  .add('card', ()=><Card/>);
