@@ -9,6 +9,8 @@ import App from '../App.js';
 
 import Card from '../card';
 
+import NavBar from '../components/navbar'
+
 
 
 storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
@@ -25,3 +27,7 @@ storiesOf('Button', module)
   .add('test', ()=>(<h3>Hello World</h3>))
   .add('app', ()=><App/>)
   .add('card', ()=><Card/>);
+
+
+  storiesOf('navbar', module)
+    .add('navigationBar',()=><NavBar/> );
