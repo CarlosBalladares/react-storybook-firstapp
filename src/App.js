@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Button from '@material-ui/core/Button';
+import NavBar from './components/navbar'
 
 
 function concat(a:string, b:string){
@@ -20,6 +21,7 @@ class App extends Component{
           <Button variant="contained" color="primary">
               Hello World
             </Button>
+            <NavBar/>
         </p>
       </div>
     );

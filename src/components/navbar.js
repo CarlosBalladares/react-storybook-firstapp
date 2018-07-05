@@ -1,46 +1,27 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
+import {AppBar, ToolbarGroup, FlatButton} from '@material-ui/core/'
 
-const styles = {
-  root: {
-    flexGrow: 1,
-  },
-  flex: {
-    flex: 1,
-  },
-  menuButton: {
-    marginLeft: -12,
-    marginRight: 20,
-  },
-};
+// Defining a stateless, functional component, MyNavLinks.
+// This component contains your navigation links.
 
-function NavBar(props) {
-  const { classes } = props;
-  return (
-    <div className={classes.root}>
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
+const MyNavLinks = () => (
+  <ToolbarGroup>
+    <FlatButton label="Dashboard" containerElement={<Link to="dashboard"/>}/>
+    <FlatButton label="Settings" containerElement={<Link to="settings" />}/>
+    <FlatButton label="Profile" containerElement={<Link to="profile" />}/>
+  </ToolbarGroup>
+);
 
-          </IconButton>
-          <Typography variant="title" color="inherit" className={classes.flex}>
-            Title
-          </Typography>
-          <Button color="inherit">Login</Button>
-        </Toolbar>
-      </AppBar>
-    </div>
-  );
-}
 
-NavBar.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
+// Another stateless, functional component, MyAppBar.
+// Here we are setting the iconElementRight property of Material UI's AppBar
+// to the component defined above.
 
-export default withStyles(styles)(NavBar);
+const NavBar = () => (
+    <AppBar
+      title="Brand"
+      iconElementRight={<MyNavLinks />}
+    />
+);
+
+export default NavBar;
